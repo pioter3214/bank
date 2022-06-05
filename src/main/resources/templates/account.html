@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
+        <property name="additionalDialects">
+            <set>
+                <!-- Note the package would change to 'springsecurity3' if you are using that version -->
+                <bean class="org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect"/>
+            </set>
+        </property>
+    </bean>
+</head>
+<body>
+    <p th:text="${user.getUsername()}"></p>
+    <p th:id="accNumber" th:text="${account.getAccNumber()}"></p>
+    <p th:text="${account.getBalance()}"></p>
+
+    <a href="/transfer">Transfer</a>
+    <a href="/limit">Limit</a>
+
+    <br>
+    <br>
+
+    Transfer History
+    <table>
+        <tr>
+            <td>From</td><td>To</td><td>Sum</td>
+        </tr>
+        <tr th:each="transfer: ${history}">
+            <td th:id="transferAccNumber" th:text="${transfer.getFormAccNumber()}"></td>
+            <td th:text="${transfer.getToAccNumber()}"></td>
+            <td th:if="${transfer.getFormAccNumber()} == ${account.getAccNumber()}" th:id="sum" th:text="'-' + ${transfer.getSum()}"></td>
+            <td th:if="${transfer.getFormAccNumber()} != ${account.getAccNumber()}" th:id="sum" th:text="'+' + ${transfer.getSum()}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

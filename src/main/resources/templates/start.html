@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background: #31333a;
+        }
+
+        li,a,button{
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+        }
+
+        header{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 10%;
+            background-color: #24252A;
+        }
+
+        .logo{
+            cursor: pointer;
+            margin-right: auto;
+            background-color: #24252A;
+        }
+
+        .nav_links{
+            list-style: none;
+            background-color: #24252A;
+        }
+
+        .nav_links li{
+            background-color: #24252A;
+            display: inline-block;
+            padding: 0px 20px;
+        }
+
+        .nav_links li a{
+            background-color: #24252A;
+            transition: all 0.3s ease 0s;
+        }
+
+        .nav_links li a:hover{
+            color: rgb(0,136,169);
+        }
+
+        button{
+            padding: 9px 25px;
+            background-color: rgba(0,136,169,1);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+        }
+
+        button:hover{
+            background-color: rgba(0,136,169,0.8);
+        }
+
+        .x{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {  display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+    "create_acc create_acc ukraina"
+    "info info2 info3"
+    ". . .";
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            background-color: #31333a;
+        }
+
+        .create_acc {
+            text-align: center;
+            grid-area: create_acc;
+            margin: 5px;
+        }
+
+        .create_acc img{
+            padding: 10px;
+        }
+
+        .img_client{
+            width: 100%;
+            height: 90%;
+        }
+
+        .ukraina {
+            grid-area: ukraina;
+            text-align: center;
+            margin: 5px;
+            padding: 30px;
+        }
+
+        .flag{
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 300px;
+            height: 150px;
+        }
+
+        .info {
+            grid-area: info;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .invest{
+            width: 160px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .info2 {
+            grid-area: info2;
+            background-color: purple;
+            margin: 5px;
+        }
+
+        .info3 {
+            grid-area: info3;
+            background-color: aqua;
+            margin: 5px;
+        }
+
+        footer{
+            width: 100%;
+            height: 50px;
+            color: white;
+            text-align: center;
+            background-color: #24252A;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo">Michalak Bank</a>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/singup">Sing in</a></li>
+                <li><a href="/login">Log in</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="#"><button>Contact</button></a>
+    </header>
+    <div class="x">
+        <div class="container">
+            <div class="create_acc">
+                <img class="img_client" src="https://www.blackboard.com/sites/default/files/styles/1000x300/public/2019-10/HappyClientReal_1800x400_964176178.jpg?h=d17d86cb&itok=jtLKQwwk">
+                <p>Create free account and get 50 PLN ! <a href="/singup"><button>Create</button></a></p>
+            </div>
+            <div class="ukraina">
+                <img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg">
+                <br><br>
+                Відкрий рахунок<br>
+                рахунок Konto Przekorzystne <br>
+                або рахунок Konto Допомога<br>
+                <br>
+                <br>
+                <a href="/singup"><button>Check</button></a>
+            </div>
+            <div class="info">
+                <img class="invest" src="https://www.yanokhipoteczny.pl/blog/wp-content/uploads/2020/10/plynnnosc-inwestycji.jpg"><br><br>
+                Lokata 4% z inwestycja <br>
+                Inwestowanie nigdy nie bylo tak proste!<br><br>
+                Lokata do 4% w skali roku na 6 miesięcy <br>
+                z jednym z 5 dostępnych produktów inwestycyjnych<br>
+                Lokata 4% w skali roku na 6 miesięcy podział<br>
+                środków: 30% na lokatę oraz 70% na fundusz inwestycyjny<br><br>
+                Lokata 3,5% w skali roku na 6 miesięcy <br>
+                podział środków: 50% na lokatę oraz 50% <br>
+                na fundusz inwestycyjny
+            </div>
+            <div class="info2">info2</div>
+            <div class="info3">info3</div>
+
+
+        </div>
+
+    </div>
+    <footer>&#169;</footer>
+</body>
+</html>
